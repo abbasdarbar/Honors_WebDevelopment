@@ -1,6 +1,9 @@
+
 <?php
 
-include "models/add.php";
+include 'models/function.php';
+
+$pdo = connectToDatabase();
 
 $query = 'SELECT * FROM todos';
 
@@ -8,8 +11,7 @@ $statement = $pdo->prepare($query);
 
 $statement->execute();
 
-$rows = $statement->fetchAll(mode: PDO::FETCH_ASSOC); // Fetch associative arrays. Keys will be the field names
+$rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-var_dump($rows);
 
-include "views/index.view.php";
+include 'views/index.view.php';

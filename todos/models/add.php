@@ -1,6 +1,6 @@
 <?php 
 
-include "models/function.php";
+include "function.php";
 if (isset($_POST['title'])) {
 
     $title = $_POST['title'];
@@ -13,9 +13,9 @@ if (isset($_POST['title'])) {
 
     $statement->execute();
 
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit;
 
 }
 
-include "views/add.view.php";
+include "../views/add.view.php";
